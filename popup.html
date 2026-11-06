@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+  popup.html — the small window that opens when you click the extension icon.
+
+  It's an ordinary web page, but extension pages have a strict
+  Content Security Policy: no inline JavaScript. That means
+    - no <script> tags with code inside them
+    - no onclick="..." attributes
+  All JS must live in a separate file, loaded with <script src="...">.
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <h1>Simple Redirector</h1>
+
+  <form id="add-form">
+    <label>
+      When I visit
+      <input id="from" type="text" placeholder="youtube.com" required>
+    </label>
+    <label>
+      Send me to
+      <input id="to" type="text" placeholder="https://www.google.com" required>
+    </label>
+    <button type="submit">Add redirect</button>
+    <p id="error" class="error"></p>
+  </form>
+
+  <h2>Active redirects</h2>
+  <ul id="rule-list"></ul>
+  <p id="empty" class="muted">No redirects yet.</p>
+
+  <script src="popup.js"></script>
+</body>
+</html>

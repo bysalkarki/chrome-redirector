@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Simple Redirector",
+  "version": "1.0.0",
+  "description": "Redirect websites you choose to other websites.",
+
+  "permissions": [
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback"
+  ],
+
+  "host_permissions": ["<all_urls>"],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Simple Redirector"
+  }
+}
